@@ -1663,7 +1663,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_settings=0x7f090043;
+        public static final int action_settings=0x7f090049;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
@@ -1718,6 +1718,12 @@ containing a value of this type.
         public static final int useLogo=0x7f090013;
         public static final int withText=0x7f090018;
         public static final int wrap_content=0x7f090009;
+        public static final int xTag=0x7f090043;
+        public static final int xValue=0x7f090044;
+        public static final int yTag=0x7f090048;
+        public static final int yValue=0x7f090045;
+        public static final int zTag=0x7f090047;
+        public static final int zValue=0x7f090046;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur=0x7f080001;
@@ -1840,6 +1846,9 @@ containing a value of this type.
         public static final int minus=0x7f0a0014;
         public static final int plus=0x7f0a0013;
         public static final int value=0x7f0a0015;
+        public static final int x=0x7f0a0016;
+        public static final int y=0x7f0a0017;
+        public static final int z=0x7f0a0018;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0b00cf;

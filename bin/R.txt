@@ -358,7 +358,7 @@ int id action_menu_presenter 0x7f090006
 int id action_mode_bar 0x7f09002e
 int id action_mode_bar_stub 0x7f09002d
 int id action_mode_close_button 0x7f090020
-int id action_settings 0x7f090043
+int id action_settings 0x7f090049
 int id activity_chooser_view_content 0x7f090021
 int id always 0x7f090014
 int id beginning 0x7f09001b
@@ -413,6 +413,12 @@ int id upID 0x7f090041
 int id useLogo 0x7f090013
 int id withText 0x7f090018
 int id wrap_content 0x7f090009
+int id xTag 0x7f090043
+int id xValue 0x7f090044
+int id yTag 0x7f090048
+int id yValue 0x7f090045
+int id zTag 0x7f090047
+int id zValue 0x7f090046
 int integer abc_config_activityDefaultDur 0x7f080001
 int integer abc_config_activityShortDur 0x7f080000
 int integer abc_max_action_buttons 0x7f080002
@@ -463,6 +469,9 @@ int string hello_world 0x7f0a0011
 int string minus 0x7f0a0014
 int string plus 0x7f0a0013
 int string value 0x7f0a0015
+int string x 0x7f0a0016
+int string y 0x7f0a0017
+int string z 0x7f0a0018
 int style Animation_AppCompat_DropDownUp 0x7f0b00cf
 int style AppBaseTheme 0x7f0b00f8
 int style AppTheme 0x7f0b00f9

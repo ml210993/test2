@@ -1,34 +1,44 @@
 package com.example.test2;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.*;
 import android.view.View.OnClickListener;
 import android.widget.*;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+//import android.hardware.Sensor;
+//import android.hardware.SensorEvent;
+//import android.hardware.SensorEventListener;
+import android.hardware.*;
+//import android.hardware.SensorManager;
 
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity implements SensorEventListener  {
+	float mLastX, mLastY,mLastZ;
 	int i = 0;
+	private boolean mInit;
+	private final float NOISE = (float)2.0;
 	
 	private SensorManager mSensorManager;
-	private Sensor mSensor;
+	private Sensor mAccelerometer;
 
 		
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {    	
         super.onCreate(savedInstanceState);
-        
-    	mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-    	mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        
         setContentView(R.layout.activity_main);
+       
+        
+        mInit = false;
+    	mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+    	mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    	 mSensorManager.registerListener( this, mAccelerometer , SensorManager.SENSOR_DELAY_NORMAL);
+       
+        
+        
         final TextView tview=(TextView)findViewById(R.id.textview);
         ToggleButton toggle = (ToggleButton) findViewById(R.id.lockID);
         
@@ -80,12 +90,66 @@ public class MainActivity extends ActionBarActivity {
     	});
     	
     	
-    	
-        
-        
-        
-    }
+   
+    } //beidzas onCreate
     
+ 
+    
+    public void onSensorChanged(SensorEvent event){
+    	TextView tvX = (TextView)findViewById(R.id.xValue);
+    	TextView tvY = (TextView)findViewById(R.id.yValue);
+    	TextView tvZ = (TextView)findViewById(R.id.zValue);
+//    	
+//    	float x = event.values[0];
+//    	float y = event.values[1];
+//    	float z = event.values[2];
+//    	
+//    	if (!mInit){
+//    		mLastX=x;
+//    		mLastY=y;
+//    		mLastZ=z;
+//    		tvX.setText("0.0");
+//    		tvY.setText("0.0");
+//    		tvZ.setText("0.0");
+//    		mInit = true;
+//    	}
+//    	
+//    	else{
+//    		float deltaX = Math.abs(mLastX - x);
+//    		float deltaY = Math.abs(mLastX - y);
+//    		float deltaZ = Math.abs(mLastX - z);
+//    		
+//    		if (deltaX < NOISE) deltaX = (float)0.0;
+//    		if (deltaY < NOISE) deltaY = (float)0.0;
+//    		if (deltaZ < NOISE) deltaZ = (float)0.0;
+//    		
+//    		mLastX=x;
+//    		mLastY=y;
+//    		mLastZ=z;
+//    		
+//    		tvX.setText(Float.toString(deltaX));
+//    		tvY.setText(Float.toString(deltaY));
+//    		tvZ.setText(Float.toString(deltaZ));
+//    		
+//    		
+//    	}
+    	
+    	if(event.sensor.getType()==Sensor.TYPE_ACCELEROMETER){
+			
+			// assign directions
+			float x=event.values[0];
+			float y=event.values[1];
+			float z=event.values[2];
+			
+			tvX.setText(Float.toString(x));
+			tvY.setText(Float.toString(y));
+			tvZ.setText(Float.toString(z));
+		}
+    	
+    	
+    	
+    }
+
     
 
 
@@ -107,4 +171,12 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+		// TODO Auto-generated method stub
+		
+	}
 }

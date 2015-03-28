@@ -20,6 +20,9 @@
     <string name = "plus">+</string>
     <string name = "minus" >-</string>
     <string name = "value">0</string>
+    <string name = "x">X</string>
+    <string name = "y">Y</string>
+    <string name = "z">Z</string>
     
     
 </resources>

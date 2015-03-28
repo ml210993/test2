@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"/>
+        android:layout_marginBottom="14dp" />
 
     <Button
         android:id="@+id/downID"
@@ -29,17 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/downID"
+        android:layout_alignEnd="@+id/downID"
         android:layout_alignLeft="@+id/downID"
         android:layout_alignRight="@+id/downID"
         android:layout_alignStart="@+id/downID"
-        android:layout_alignEnd="@+id/downID"
         android:layout_marginBottom="24dp"
         android:text="@string/plus" />
 
     <CheckedTextView
         android:id="@+id/textview"
-        android:text="@string/value"
-        android:textSize="32sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/downID"
@@ -47,6 +45,71 @@
         android:layout_alignStart="@+id/lockID"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
-        />
+        android:text="@string/value"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/xTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/x"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/xValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/xTag"
+        android:layout_alignBottom="@+id/xTag"
+        android:layout_alignEnd="@+id/textview"
+        android:layout_alignLeft="@+id/yValue"
+        android:layout_alignRight="@+id/lockID"
+        android:text="@string/value"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/yValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview"
+        android:layout_alignRight="@+id/lockID"
+        android:layout_below="@+id/xValue"
+        android:layout_toRightOf="@+id/textview"
+        android:text="@string/value"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/zValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview"
+        android:layout_alignLeft="@+id/yValue"
+        android:layout_alignRight="@+id/yValue"
+        android:layout_below="@+id/yValue"
+        android:text="@string/value"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/zTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/yTag"
+        android:layout_alignStart="@+id/yTag"
+        android:layout_below="@+id/yValue"
+        android:text="@string/z"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/yTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/xTag"
+        android:layout_alignRight="@+id/xTag"
+        android:layout_below="@+id/xTag"
+        android:text="@string/y"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
